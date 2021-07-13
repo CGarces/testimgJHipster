@@ -1,0 +1,45 @@
+application {
+  config {
+    applicationType monolith
+    authenticationType jwt
+    baseName test
+    blueprints []
+    buildTool maven
+    cacheProvider ehcache
+    clientFramework angularX
+    clientPackageManager npm
+    clientTheme litera
+    clientThemeVariant light
+    creationTimestamp 1616404743781
+    databaseType sql
+    devDatabaseType h2Disk
+    dtoSuffix DTO
+    enableHibernateCache true
+    enableSwaggerCodegen false
+    enableTranslation true
+    jhiPrefix jhi
+    jhipsterVersion "7.1.0"
+    jwtSecretKey "NmY0ZWU4YzJjMzk1ODRlYmFkNGZkMGNlYWU1ZWEwOTE1MDNmMjMwN2ZlM2ZhNTY4NmVhODAzMmZlZDE5OGZkMTJhMTEwYjdkNjBmOWVkMWVmNGJhNDM4MjIyNDk4YmIxNGZhMzQ2YmY0YjQ2MDYxZjVkZWEzMWMyNWZhYmY4MWQ="
+    languages [es]
+    messageBroker false
+    nativeLanguage es
+    otherModules []
+    packageName com.demo.test
+    prodDatabaseType mysql
+    reactive false
+    searchEngine false
+    serverPort 8080
+    serviceDiscoveryType false
+    skipClient false
+    skipServer false
+    skipUserManagement false
+    testFrameworks []
+    websocket false
+    withAdminUi true
+  }
+  entities Image
+}
+
+entity Image {
+  data ImageBlob required
+}
