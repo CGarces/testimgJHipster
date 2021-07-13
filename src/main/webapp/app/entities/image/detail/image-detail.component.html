@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="image">
+      <h2 data-cy="imageDetailsHeading"><span jhiTranslate="testApp.image.detail.title">Image</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ image.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="testApp.image.data">Data</span></dt>
+        <dd>
+          <div *ngIf="image.data">
+            <a (click)="openFile(image.data, image.dataContentType)">
+              <img [src]="'data:' + image.dataContentType + ';base64,' + image.data" style="max-width: 100%" alt="image image" />
+            </a>
+            {{ image.dataContentType }}, {{ byteSize(image.data) }}
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/image', image.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
